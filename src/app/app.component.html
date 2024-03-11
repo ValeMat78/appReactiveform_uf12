@@ -1,0 +1,15 @@
+<form [formGroup]="singup" (ngSubmit)="onSubmit()">
+  <input type="text"
+  formControlName="nominativo"> testo
+  <br><br>
+  <input type="email"
+  formControlName="email"> email
+  <br><br>
+  <input type="password"
+  formControlName="password"> password
+  <br><br>
+  <button type="submit" [disabled]="!singup.valid"> salva </button>
+  <br>
+  <span *ngIf="!singup.get('nominativo').valid && singup.get('nominativo').touched"> nominativo non valido </span>
+  <span *ngIf="!singup.get('email').valid && singup.get('email').touched"> email non valida </span>
+</form>
